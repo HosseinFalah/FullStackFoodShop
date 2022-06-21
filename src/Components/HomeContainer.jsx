@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Delivery from "../Asset/img/delivery.png";
 import HeroBg from "../Asset/img/heroBg.png";
 import { heroData } from '../utils/Data';
@@ -37,7 +38,8 @@ const HomeContainer = () => {
                 <img src={HeroBg} className="ml-auto h-420 w-full lg:w-auto lg:h-650" alt="hero-bg" />
                 <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-16 py-4 gap-4 flex-wrap">
                     {heroData && heroData.map(date => (
-                        <div key={date.id} className="lg:w-190 pt-[2.8rem] pb-5 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center">
+                        <div key={uuidv4()} className="lg:w-190 pt-[2.8rem] pb-5 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center">
+                            {console.log()}
                             <img src={date.imageSrc} className="w-20 lg:w-40 -mt-10 lg:-mt-20" alt="I1" />
                             <p className="text-base lg:text-xl font-semibold text-zinc-700 mt-2 lg:mt-4">{date.name}</p>
                             <p className="text-[12px] lg:text-sm text-gray-500 font-semibold my-1 lg:my-3">{date.decp}</p>
